@@ -2,7 +2,7 @@
 
 1. What is the difference between synchronous and asynchronous code in terms of execution flow?
 
-2. If a synchronous function takes 5 seconds to finish, what happens to the rest of the code?
+2. If a synchronous function takes 5 seconds to finish, what happens to the rest of the code?  
 
 3. Why does asynchronous code exist in JavaScript?
 
