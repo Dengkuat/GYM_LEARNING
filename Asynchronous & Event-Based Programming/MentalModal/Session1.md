@@ -2,7 +2,7 @@ Asynchronous And Event based programming mental model session
 
 1. Explain the difference between synchronous and asynchronous code execution in JavaScript. How does the JavaScript runtime handle each type of operation?
 2. Why do we need asynchronous programming in JavaScript? Give two common examples where it's useful.
-3. What are Promise and call back function in simple terms. How using promise is different from using callbacks while handling asynchronous operations?
+3. What are Promise and call back function in simple terms. How using promise is different from using callbacks while handling asynchronous  operations?
 4. What are the three states of a Promise? Briefly describe each state.
 5. What is the difference between `.then()` and `.catch()` in Promise handling?
 6. What does the `async` keyword do when placed before a function? What does it mean?
