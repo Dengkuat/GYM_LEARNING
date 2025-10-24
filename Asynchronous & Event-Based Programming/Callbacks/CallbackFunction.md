@@ -4,7 +4,7 @@
 **NB:** JS callback function excecute in sequence they are called not where they are defined
 
 ```bash
-Function invoked
+Function invoked  
 function greet(){
 console.log("Good morning Deng")
 }
