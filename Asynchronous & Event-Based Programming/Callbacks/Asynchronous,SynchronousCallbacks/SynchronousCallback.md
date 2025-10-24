@@ -42,4 +42,4 @@ console.log("Do other stuff while waiting...");
 note 
 so the data will load after a time period of 1 second
 so the other task will be running such as the do other stuff
-```
+``` 
