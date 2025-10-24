@@ -7,7 +7,7 @@ They could include;
 
 - **Macro Task →** These are tasks in the callback quene that run after the micro taks
 
-They could include;
+They could include;  
 
 - setTimeouts
 - setIntervals
