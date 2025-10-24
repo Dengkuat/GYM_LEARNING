@@ -4,7 +4,7 @@
 
 - So callback hell is when you have multiple asynchronous tasks that depends on each other so we can handle then using nested callbacks
 - Each callback is inside another callback leading to deeply nested indented hard to read code also called the pyramid of Doom
-
+ 
 ```bash
 getUser(function(user) {
   getPosts(user.id, function(posts) {
