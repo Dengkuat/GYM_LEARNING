@@ -31,7 +31,7 @@ but before it runs (moves to the callback quene, then from queue to the stack wh
 output
 start
 End 
-Inside Timeout
+Inside Timeout  
 ```
 
 - **Callback Quene(Task Quene) →** This is where all completed asynchronus task wait untill the call stack is empty.
