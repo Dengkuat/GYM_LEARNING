@@ -27,4 +27,4 @@ It dosnt block the other rest of the program since the code keep executing as th
 
 so these are long running task and the task would take long so asynchronous code exist to keep excecuting the other tasks as the long running ones are being excecuted 
 
-- If js waited for the ececution to finish then the app/website would freeze so javascript offloads this tasks to the background to be handled by maybe node.js or the browser
+- If js waited for the ececution to finish then the app/website would freeze so javascript offloads this tasks to the background to be handled by maybe node.js or the browser  
