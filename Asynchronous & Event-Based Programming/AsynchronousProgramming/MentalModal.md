@@ -1,12 +1,23 @@
 ### **Mental Model Questions (Synchronous & Asynchronous + Execution Models + Task Execution)**
 
-1. What is the difference between synchronous and asynchronous code in terms of execution flow?
+**1. What is the difference between synchronous and asynchronous code in terms of execution flow?**
 
-2. If a synchronous function takes 5 seconds to finish, what happens to the rest of the code?  
+- Synchrononus code excicutes code line by line one at task at a time each task has to finish before another task is run, it is blocking meaning future codes must wait untill the current task is compeleted
+- Asynchronous code excecuts other codes as the long running task are being excecuted such as the SetTimeout, fetch API and reading file, it is a none blocking meaning other task can continue running as the other codes are run in the background
 
-3. Why does asynchronous code exist in JavaScript?
+**2. If a synchronous function takes 5 seconds to finish, what happens to the rest of the code?**
 
-4. What is the call stack and how does it relate to synchronous code execution?
+- So synchronous codes excecute line by line one task at a time so when a synchrnonous function takes 5 seconds to finish then then the other future codes will have to wait for the 5 second to complete before then can start excecution/run
+
+**3. Why does asynchronous code exist in JavaScript?**
+
+- Asynchronous code exist is js simply because there are some long running running tasks that would freeze(crush) the app or web so asychronous codes run other task as the long running task are being run in the background then later on run the task when it ready
+
+**4. What is the call stack and how does it relate to synchronous code execution?**
+
+- Callstack manages track of function call and there positions and how they are to be excecuted
+So when a function is called it is pushed into the stack
+After excecution it is popped off the stack
 
 **5.** Explain the event loop in your own words.
 
