@@ -1,12 +1,38 @@
-  How is a callback function different from a normal function?
+**How is a callback function different from a normal function?**
 
-What is the main reason we use callbacks in asynchronous programming?
+- A callback is a function that is passed as an argument into another function is later invoked inside that function
+- A normal function is a function that is simply defined and called directly by name
 
-Explain the difference between synchronous and asynchronous callbacks.
+**What is the main reason we use callbacks in asynchronous programming?**
+
+- Asynchronous code allows other tasks to be run while conutinuing to run the long running task (setTimeout, fetch api, database check, file reading) so these task after the operation they dont return results so we pass on a callback function so that they can be excecuted later or invoked
+
+**Explain the difference between synchronous and asynchronous callbacks.**
+
+- Synchronous callback is a callback function that excecutes immediatly within the function it is called in, the task blocks future task untill the previous task finished excecuting
+- Asynchronous callback is a callback function that is excecuted later often after an asynchronous operation finishes, it is none blocking other codes can run in as the long running task are being excecuted in the background
 
 Why do we say callbacks are “functions passed as arguments”?
 
 Give an example of a synchronous callback and explain how it works.
+
+```bash
+function greet(name){
+    console.log(`My name is ${name}`)
+}
+function getUser(callback){
+    callback(`Deng`);
+}
+getUser(greet)
+
+output
+My name is Deng
+
+Explanation
+Greet is a normal function that takes name and print name
+getUser is a controller function it takes another function as a parameter and deceides to run it
+so GetUser controlls when greet runs and greet controlls what to do with the name and log it
+```
 
 Give an example of an asynchronous callback and explain how it works.
 
