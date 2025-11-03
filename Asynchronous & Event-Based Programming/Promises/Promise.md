@@ -104,6 +104,6 @@ resolved after 2 seconds
 
 3. **Why doesn’t a promsie block the main thread?**
 - Js excecute in a single thread so one excexution at a time
-- So promise are no non blocking because the excecution runs synchronously, so calling .then( ) callbacks the queued in the microtask queue
+- So promise are no non blocking because the excecution runs synchronously, so calling .then( ) callbacks the queued in the microtask queue 
 - The main thread continues runnig while the promises are pending, only when the promise settles is when the callback excecutes the microtask queue
 ****
