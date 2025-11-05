@@ -1,5 +1,5 @@
-***then, catch and finally exercise***
-*Resolving a promise*
+*** then, catch and finally exercise ***
+* Resolving a promise *
   ```bash
 const successfullPromise = new Promise((resolve, reject) => {
   setTimeout(()=>resolve("Data fetch successfull"), 2000)
@@ -23,8 +23,8 @@ successfullPromise
   finally for no matter what runs either successfull or failur
   ```
 
-  *Rejected Promise*
-  ```bash
+  * Rejected Promise *
+    ```bash
   const failedPromise = new Promise ((resolve, reject) => {
     setTimeout(()=> reject("Error: Something went wrong"), 2000);
 });
@@ -39,10 +39,12 @@ failedPromise
 
     Explanation?
     So its the same as the resolved explanation only that catch acctaully catched the error
+    
     ```
 
-    *Chaining Promise*
-```bash
+
+    * ChainingPromise *
+    ```bash 
 const chainedPromise = new Promise((resolve) => {
     resolve(2);
 });
