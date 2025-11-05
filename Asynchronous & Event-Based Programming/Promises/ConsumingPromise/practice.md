@@ -1,0 +1,25 @@
+*** then, catch and finally exercise ***
+* Resolving a promise *
+  ```bash
+const successfullPromise = new Promise((resolve, reject) => {
+  setTimeout(()=>resolve("Data fetch successfull"), 2000)
+})
+successfullPromise
+  .then(result => console.log('This is ur result'))
+  .catch(error => console.error('Error'))
+  .finally(()=> console.log('Operation is done'))
+
+  output 
+  Data fetched successfully 
+  Operation finished 
+
+  Explanation?
+  So we create a promsie with either resolve or reject state as the 2 paramter to the Promise
+  The Promise keyword is an object that create a Promise so with new keyword then we have created a new promise
+  So we wrap a setTimeOut of 2 seconds inside the promise so after 2 seconds then it resolved the meaning it was successfull so if we had an  error then it would reject 
+  So then we start consuming the promise 
+  then if the promise was successfull
+  catch is the promise was rejected
+  finally for no matter what runs either successfull or failur
+  ```
+
