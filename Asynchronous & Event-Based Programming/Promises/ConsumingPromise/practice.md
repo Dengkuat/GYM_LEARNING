@@ -41,3 +41,23 @@ failedPromise
     So its the same as the resolved explanation only that catch acctaully catched the error
     ```
 
+*Chaining Promise*
+```bash
+const chainedPromise = new Promise((resolve) => {
+    resolve(2);
+});
+chainedPromise
+.then(num => num*2)
+.then(num => num+3)
+.then(num => console.log(num))
+.finally(()=>console.log("Operation is complete"))
+ 
+ output
+ 7
+Operation finished 
+
+ Explanation?
+so we created a new promise with a parameter resolve value of 2
+then when we start consuming promise the first then recived 2 and gives the solution of 4 so that 4 will now automatically passed to the next then in the chain and the third chain logs the final result 
+
+ ```
