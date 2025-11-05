@@ -99,3 +99,34 @@ so we created a new promise with a parameter resolve value of 2
 
 then when we start consuming promise the first then recived 2 and gives the solution of 4 so that 4 will now automatically passed to the next then in the chain and the third chain logs the final result
 ```
+
+Resolved and rejected promise
+
+```bash
+function fetchData(success){
+return new Promise((resolve, reject) => {
+setTimeout(() => {
+if(success){
+resolve("Data got fetched")
+} else{
+reject("Data not fetched")
+}
+}, 3000);
+});
+}
+fetchData(true)
+.then(data => console.log(data))
+.catch(error => console.error(error))
+.finally(()=>console.log("Data request complete"))
+
+output
+Data got fetched
+Data request complete
+
+Explanation?
+So a in a function diffinition with name fetchData and parameter successfull standing for when fullfilled
+The we return a new Promise with either state resolved and rejected 
+A setTimeout of 3 seconds then is successfull then we resolve standing for if the data is fatched
+then else reject is there isnt any data successfuly fetched
+
+```
