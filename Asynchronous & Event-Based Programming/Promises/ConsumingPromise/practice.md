@@ -1,5 +1,5 @@
-*** then, catch and finally exercise ***
-* Resolving a promise *
+***then, catch and finally exercise***
+*Resolving a promise*
   ```bash
 const successfullPromise = new Promise((resolve, reject) => {
   setTimeout(()=>resolve("Data fetch successfull"), 2000)
