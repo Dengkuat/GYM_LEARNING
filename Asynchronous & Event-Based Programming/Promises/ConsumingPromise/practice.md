@@ -41,7 +41,7 @@ failedPromise
     So its the same as the resolved explanation only that catch acctaully catched the error
     ```
 
-*Chaining Promise*
+    *Chaining Promise*
 ```bash
 const chainedPromise = new Promise((resolve) => {
     resolve(2);
