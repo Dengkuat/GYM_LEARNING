@@ -23,3 +23,21 @@ successfullPromise
   finally for no matter what runs either successfull or failur
   ```
 
+  *Rejected Promise*
+  ```bash
+  const failedPromise = new Promise ((resolve, reject) => {
+    setTimeout(()=> reject("Error: Something went wrong"), 2000);
+});
+failedPromise
+    .then(result => console.log(result))
+    .catch(error => console.error(error))
+    .finally(()=> console.log("Operation finished"))
+
+    output
+    Error: Something went wrong 
+    Operation finished 
+
+    Explanation?
+    So its the same as the resolved explanation only that catch acctaully catched the error
+    ```
+
