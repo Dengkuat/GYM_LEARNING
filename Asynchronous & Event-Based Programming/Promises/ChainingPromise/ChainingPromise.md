@@ -1,7 +1,7 @@
 - Chaining promise simply means connecting mutiple .then() calls togther, so the result of one promise is the input for the nect one
 - So we can say that this is like a sequence of dependent taks each one waits for the previous one to finish
 
-**So why do we chain in promise**
+**So why do we chain in promise**  
 
 - Asynchronous operations depend on the result of previous one
 - We want to avoid callback hell so we use chaining
