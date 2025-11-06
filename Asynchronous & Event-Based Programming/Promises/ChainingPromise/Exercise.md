@@ -1,5 +1,5 @@
 // Description
-
+ 
 // Simulate 3 steps of cooking using promises and chaining.
 // 	•	Step 1: “Boiling water” takes 1 second
 // 	•	Step 2: “Adding rice” takes 2 seconds
