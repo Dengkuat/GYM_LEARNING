@@ -24,7 +24,7 @@ function dalay(time, message) {
     console.log(message)
     setTimeout(() => {
       resolve()
-    }, time)
+    }, time) 
   })
 }
 
