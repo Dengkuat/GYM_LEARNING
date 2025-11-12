@@ -1,9 +1,18 @@
-Asynchronous And Event based programming mental model session
+**Asynchronous And Event based programming mental model session**
 
-1. Explain the difference between synchronous and asynchronous code execution in JavaScript. How does the JavaScript runtime handle each type of operation?
-2. Why do we need asynchronous programming in JavaScript? Give two common examples where it's useful.
-3. What are Promise and call back function in simple terms. How using promise is different from using callbacks while handling asynchronous  operations?
-4. What are the three states of a Promise? Briefly describe each state.
+1. **Explain the difference between synchronous and asynchronous code execution in JavaScript. How does the JavaScript runtime handle each type of operation?**
+Synchronous function is where each code runs after the other in a sequence where is the first isnt finished then the second one wont continue the excecution
+Asynchronous code allow js to start long running tasks without blocking the other thread or tasks 
+2. **Why do we need asynchronous programming in JavaScript? Give two common examples where it's useful.**
+JS runs on a single thread so it can only excecute one task at a time so if we waited for long running task like network request or file read then this would freeze the app 
+So asynchronous programming prevents that by start the long running task while continuing other tasks and then later one handle that result later without freezing the main thread
+3. **What are Promise and call back function in simple terms. How using promise is different from using callbacks while handling asynchronous operations?
+A callback** is a function that is passed as an argument to another function and is later envocked, after some task finishes
+**A promise** is an object that represents a value that will be available in the future, so it can either be resolved or rejected
+4. **What are the three states of a Promise? Briefly describe each state.**
+**Pending -** The inital state of a promise, not yet finished
+**Resoled -** This is when an operation completed successfully
+**Rejected -** This is when an operation is failed
 5. What is the difference between `.then()` and `.catch()` in Promise handling?
 6. What does the `async` keyword do when placed before a function? What does it mean?
 7. Explain what the `await` keyword does in simple terms. Why can't we use it in regular functions?
