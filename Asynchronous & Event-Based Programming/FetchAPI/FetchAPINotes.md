@@ -141,3 +141,121 @@ We must
 - set method
 - set headers
 - set body
+
+```bash
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Posting</title>
+</head>
+<body>
+  <script>
+    async function createPost() {
+      const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          title: "Hello",
+          body: "World",
+          userId: 1
+        })
+      });
+
+      const data = await response.json();
+      console.log(data);
+    }
+
+    createPost();
+  </script>
+</body>
+</html>
+
+Explanation?
+The code is send data to server using a post request
+Recive the response
+Print the response in the console
+
+Steps?
+So we create an async function with createPost()
+Then we fetch url to connect with the url
+So now inside the fetch we want to send data to server
+
+header justt tells the type of data like the metadata to what the data is to mean
+
+the body is js so we have to turn it int string format json so that the server can accept 
+So we wait then for  the reponse and then turn the response into json so that we can read the response
+Then we will print the response
+```
+
+**Common request methods**
+
+- GET → retrieve data
+- POST → create data
+- PUT → Update entire records
+- PATCH → update part of records
+- DELETE → Remove data
+
+**Errors in fetch** 
+
+- Fetch does not throw errors on
+- 404
+- 500
+- 403
+- So thoes are successfull requests but with bad result
+
+So we must check with 
+
+```bash
+if (!response.ok) throw new Error("Request failed");
+```
+
+**So then what does fetch throw errors at?**
+
+- No internet connection
+- CORS issues
+- request block
+
+**How do we handle errors properly?**
+
+```bash
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Handling errors</title>
+</head>
+<body>
+  <script>
+    async function loadData() {
+      try {
+        const response = await fetch("https://badurl.com");
+
+        if (!response.ok) {
+          throw new Error(`HTTP error: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log(data);
+
+      } catch (error) {
+        console.log("Something went wrong:", error.message);
+      }
+    }
+
+    loadData();
+  </script>
+</body>
+</html>
+
+<!-- note:
+try/catch catches network problems
+reponse.ok catches server errors -->
+
+	•	try/catch catches network problems
+	•	response.ok catches server errors
+```
