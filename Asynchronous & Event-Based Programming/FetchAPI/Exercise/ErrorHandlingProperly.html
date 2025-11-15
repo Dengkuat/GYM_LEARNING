@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Handling errors</title>
+</head>
+<body>
+  <script>
+    async function loadData() {
+      try {
+        const response = await fetch("https://badurl.com");
+
+        if (!response.ok) {
+          throw new Error(`HTTP error: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log(data);
+
+      } catch (error) {
+        console.log("Something went wrong:", error.message);
+      }
+    }
+
+    loadData();
+  </script>
+</body>
+</html>
+
+<!-- note:
+try/catch catches network problems
+reponse.ok catches server errors -->
