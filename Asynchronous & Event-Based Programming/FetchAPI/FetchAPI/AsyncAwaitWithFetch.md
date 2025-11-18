@@ -1,7 +1,7 @@
 - Fetch returns a promise, so instead of using .then we cause pause the function untill the promise finished
 
 ```bash
-Old way
+Old way 
 fetch(url)
   .then(res => res.json())
   .then(data => console.log(data))
