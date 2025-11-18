@@ -79,7 +79,7 @@ JSON ⇒ JavaScript object notion, so it is a file extention that indicated a fi
 
 Real Example
 
-```bash
+```bash 
 <!DOCTYPE html>
 <html>
   <body>
