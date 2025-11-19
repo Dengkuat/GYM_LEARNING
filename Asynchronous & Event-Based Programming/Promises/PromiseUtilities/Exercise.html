@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>promise Utilities</title>
+</head>
+<body>
+  <script>
+    async function loadDashboard() {
+      try{
+        const[user, posts, comments] = await Promise,all([
+          fetch("/users").then(res => res.json()),
+          fetch("/posts").then(res => res.json()),
+          fetch("/comments").then(res => res.json())
+        ]);
+        console.log(users, posts, comments);
+      }catch(error){
+        console.error(error)
+      }
+    }
+  </script>
+</body>
+</html>
