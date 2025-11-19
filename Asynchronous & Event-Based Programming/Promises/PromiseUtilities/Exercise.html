@@ -31,6 +31,21 @@
       ]);
       console.log(result);
     }
+
+    promise.race()
+    async function fetchWithTimeout(url, ms) {
+      const time = new Promise((_ , reject)=>
+    setTimeout(()=>reject("Timeout"), ms)
+  )
+  return Promise.race([
+    fetch(url),
+    time
+  ]);
+    }
+
+    fetchWithTimeout("/users", 2000)
+    .then(res => console.log("Got it"))
+    .then(err => console.log(err))
   </script>
 </body>
 </html>
