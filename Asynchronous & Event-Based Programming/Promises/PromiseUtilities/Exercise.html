@@ -7,6 +7,8 @@
 </head>
 <body>
   <script>
+
+    promise.all()
     async function loadDashboard() {
       try{
         const[user, posts, comments] = await Promise,all([
@@ -18,6 +20,16 @@
       }catch(error){
         console.error(error)
       }
+    }
+
+    promise.allSettle()
+    async function checkService() {
+      const result = await Promise.allSettled([
+        fetch("/service1"),
+        fetch("/service2"),
+        fetch('/service3')
+      ]);
+      console.log(result);
     }
   </script>
 </body>
