@@ -9,7 +9,7 @@ async function sequentialWait(){
     setTimeout(()=>{
     console.log(`Done`)
       resolve()
-  }, 1000)
+  }, 1000) 
     
 });
 }                                  
