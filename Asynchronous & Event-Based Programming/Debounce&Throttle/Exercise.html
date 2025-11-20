@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" id="search" placeholder="type to search...">
+  <script>
+    function debounce(func, delay){
+      let timer;   //stores the timeout reference
+
+      return function (...args){
+        const context = this;
+        clearTimeout(timer);
+        timer = setTimeout(()=>{
+          func.apply(context, arg);
+        }, dalay)
+      };
+    }
+
+    function searchHandler(event){
+      console.log(even.target.value)
+    }
+
+    const debouncedSearch = debounce(searchHandler, 500);
+
+    const searchInput = document.getElementById('search')
+    searchInput.addEventListener('input', debouncedSearch)
+  </script>
+</body>
+</html>
