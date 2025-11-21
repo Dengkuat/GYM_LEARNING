@@ -1,0 +1,31 @@
+<script>
+  async function fetchWeatherInfo() {
+  try {
+    // Country details
+    const countryName = "France";
+    const countryResponse = await fetch(`https://restcountries.com/v3.1/name/${countryName}`);
+    if (!countryResponse.ok) throw new Error(countryResponse.status);
+
+    const countryData = await countryResponse.json();
+    const country = countryData[0];
+    const capital = country.capital[0];
+    const [lat, long] = country.capitalInfo.latlng;
+
+    // Weather details
+    const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&current_weather=true`;
+    const weatherResponse = await fetch(weatherUrl);
+    if (!weatherResponse.ok) throw new Error(weatherResponse.status);
+
+    const weatherData = await weatherResponse.json();
+
+    console.log(`Country: ${country.name.common}`);
+    console.log(`Capital: ${capital}`);
+    console.log(`Weather: ${weatherData.current_weather.temperature}`);
+
+  } catch (error) {
+    console.log(`Invalid input: ${error}`);
+  }
+}
+
+fetchWeatherInfo();
+</script>
