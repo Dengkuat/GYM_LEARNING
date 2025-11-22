@@ -1,14 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exercise</title>
-</head>
-
-<body>
-  <script>
     async function fetchFirstUserPostsWithRetries() {
       let attempts = 0;
       const maxAttempts = 3;
@@ -45,7 +34,3 @@
 
     fetchFirstUserPostsWithRetries();
 
-  </script>
-</body>
-
-</html>
