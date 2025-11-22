@@ -1,4 +1,3 @@
-promise.all()
 async function loadDashboard() {
   try {
     const [user, posts, comments] = await Promise, all([
