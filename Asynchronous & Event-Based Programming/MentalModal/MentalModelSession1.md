@@ -70,8 +70,34 @@ Types can be GET, POST, PUT & DELETE
 11. **What is an event loop?**
 
 12. **How does  a `forEach()` and `map()` or `for...of` behave with promises?**
-13. What is the difference between microtasks and macrotasks in the context of the event loop?
-     a. How does queueMicrotask work
+ForEach() → takes in an iterable
+                  →it doesn care about the promise
+                  →it runs synchronously for each element
+                  →even if we use await inside forEach it wont wait for the pause
+                  →it doesnt wait for fetch to complete before moving to the next iteration
+
+map()       →takes in an iterable
+                 →nothing is acctaully resolved yet, so just an array of promises
+                 →it will wait for all of them to with Promise.all
+                 →so this will run parallel and the result contains all the json objects
+
+for…of      →for…of works perfectly with await
+                 →iterations runs sequentially, not in parallel
+                 →furst url fetch, finishes then next url
+                 →so it preserves the order where one fetch has to finish before the other one can start fetching
+
+13. **What is the difference between microtasks and macrotasks in the context of the event loop?**
+Microtasks are tasks that are taken by the event listener when the callback stack is empty before the macro tasks such as promise
+Macro are tasks that are taken by the event loop all the micoro tasks are done such as setTimeput and interval
+So the order is like this 
+run all synchronous code and finish
+run all micro tasks in the queue
+run one macotaks as the cycle goes like that
+
+     **a. How does queueMicrotask work**
+queueMicrotask lets you schedule a function to run at the end of the current tasks but before any macrotasks
+its a creative and very fast promise callback without acctaully using a promise
+
 14. Predict the output of the following code
 
 ```jsx
