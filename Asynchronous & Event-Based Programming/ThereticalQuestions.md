@@ -24,3 +24,54 @@
 *9.  If an async function awaits another async function that never resolves, how would you protect your system from hanging forever? Discuss trade-offs of your solution.*
 
 *10. You inherited legacy code using XMLHttpRequest with nested callbacks 6 levels deep. Without rewriting to fetch, how would you improve readability and reliability while keeping it async?*
+
+*11.What will log first, and why?*
+```bash
+setTimeout(() => console.log("A"), 0);
+Promise.resolve().then(() => console.log("B"));
+console.log("C");
+```
+*12.Can a long-running .then() callback delay a timer? Explain with the async model, not just the result.*
+
+*13.Is a promise executor (new Promise(() => {})) async or sync? When does its code actually run?*
+
+*14.Predict the order of logs and justify each transition*
+```bash
+Promise.resolve().then(() => {
+  console.log(1);
+  setTimeout(() => console.log(2), 0);
+  Promise.resolve().then(() => console.log(3));
+});
+setTimeout(() => console.log(4), 0);
+console.log(5);
+```
+*15.Where does .json() from fetch().then(r => r.json()) sit in the model — microtask, macrotask, or neither?*
+
+*16.If one promise inside Promise.all() rejects immediately, do the others still execute? Explain in terms of promise creation vs promise settling.*
+
+*17.Rewrite what this becomes in the async model:*
+```bash
+async function f() {
+  console.log("X");
+  await Promise.resolve();
+  console.log("Y");
+}
+f();
+console.log("Z");
+```
+*Describe which part is pushed to which queue.*
+
+*18.JS is single-threaded. When we run 3 async tasks at the same time, like 3 fetch calls, what illusion makes it look parallel? Use queues and timers in the explanation.*
+
+*19.Does this code ever reach "End"? Build the reasoning path:*
+```bash
+Promise.reject("Bad")
+  .catch(() => { throw new Error("Worse"); })
+  .catch(() => console.log("Handled"))
+  .then(() => console.log("End"));
+```
+*Explain why or why not.*
+
+*20.You have 5 promises and 3 of them fail in Promise.any().*
+*Does Promise.any() throw an aggregate error or the first single error? Explain the logic the engine follows to decide.*
+
