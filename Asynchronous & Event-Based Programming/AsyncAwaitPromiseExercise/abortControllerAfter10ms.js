@@ -4,7 +4,7 @@
 //so when it takes time we abort -> abort controller object method
 //so it has to take time about 10ms -> setTimeout 100
 
-async function abortFetch(){
+async function abortFetch(){ 
   const controller = new AbortController();
   const timer = setTimeout(()=>{
     controller.abort();
