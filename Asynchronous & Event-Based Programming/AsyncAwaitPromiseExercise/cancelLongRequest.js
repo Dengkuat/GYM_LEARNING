@@ -1,5 +1,5 @@
 // Implement a timeout for an asynchronous fetch request. If the request takes longer than 3 milliseconds, it should be aborted.
-// https://restcountries.eu/rest/v2/all
+// https://restcountries.eu/rest/v2/all 
 
 
 async function cancelLongRequest(){
