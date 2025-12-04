@@ -6,7 +6,7 @@ function displayNumber(){
   const interval = setInterval(()=>{
     console.log(12);
   }, 2000);
-  setTimeout(()=>{
+  setTimeout(()=>{ 
     clearInterval(interval)
       console.log('Stoped after 5 seconds')
     },5000)
