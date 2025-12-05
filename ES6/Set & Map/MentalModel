@@ -1,0 +1,43 @@
+- **A. Conceptual Questions**
+- **Map basics**
+    - What is the difference between a Map and a regular JavaScript object for storing key–value pairs?
+    
+    Map has a key of any type, object, function and primitive datatypes
+    
+    It aswell has a size property and built in method for iteration
+    
+    Objects are better for structured data with string keys, while map are better for dynamic order of keys
+    
+    - Can a Map use functions or objects as keys? Why or why not?
+    
+    yes, because Map are computed by reference, not by string conversion like object keys
+    
+    - How does insertion order affect iteration in a Map?
+    
+    Map preserves the order, iteration over it returns keys in the same order they are added in
+    
+- **Set basics**
+    - What is a Set and how does it handle duplicate values?
+    
+    set is a collection of unique values, adding another same item wont change anything
+    
+    - Can a Set store NaN? How does it handle equality checks for NaN?
+    
+    yes, set can store NaN tho it treats all NaN values as the same 
+    
+    - How does insertion order affect iteration in a Set?
+    
+    Set preserves the order in which the elements were inserted
+    
+- **Performance**
+    - In what situations would you choose a Map over an object?
+    
+    l would use Map in an instance where l am frequently adding and removal of key-value pairs and when keys arent guranted to be strings
+    
+    - Why might a Set be more efficient than using an array for checking if an item exists?
+    
+    only one item appears in a set so u dont have to worry if l number will appear twice
+    
+- **Comparison**
+    - How does Map differ from WeakMap?
+    - How does Set differ from WeakSet?
