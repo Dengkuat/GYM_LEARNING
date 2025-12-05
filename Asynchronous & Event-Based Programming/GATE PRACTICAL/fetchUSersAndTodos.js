@@ -1,5 +1,5 @@
 // Practical Question 
-// Create a function called fetchUserTodos that uses the Promise.all() method to fetch users and todos concurrently from the provided API endpoints and combine them based on the userId. The function should return a promise that resolves with the combined data.
+// Create a function called fetchUserTodos that uses the Promise.all()  method to fetch users and todos concurrently from the provided API endpoints and combine them based on the userId. The function should return a promise that resolves with the combined data.
 
 // Users endpoints https://jsonplaceholder.typicode.com/users
 // Todos endpoints https://jsonplaceholder.typicode.com/todos
