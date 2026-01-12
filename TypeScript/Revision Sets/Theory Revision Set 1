@@ -1,0 +1,66 @@
+### **Q1 (Enums)**
+
+You have an enum representing order status.
+
+**Question:**
+
+Why is using an enum better than using string literals like "pending" or "paid" everywhere in your code?
+
+Give **two reasons**.
+
+- Enums represent a fixed set of values using numbers or string
+- Using enums make code more readable and predictable becuase it centralizez and prevents invalid options, avoided case and spelling mistakes
+- Comparing to string literals, enums provide a single source of truth and better maintainablity, especially when values are reused across the application
+
+### **Q2 (Type vs Interface )**
+
+**Qstion:**
+
+What is **one key difference** between type and interface in TypeScript, and when would you prefer one over the other?
+
+- Interface are mainly used to define object shapes and can be extended or merged
+- Type alias are more flexible and can represent union types, intersection, tuples and primitive types
+
+- I would prefer a type alias when l need flexibility, such as defining union types, tup;es or combined multiply types
+- I would prefer an interface when defining the structure of an object that maybe reused or extended especially when working with long api and alot of code this reduces repilition and improves maintainability
+
+### **Q3 (Union types)**
+
+You have a variable that can be either a string or a number.
+
+**Question:**
+
+Why does TypeScript force you to **check the type** before calling string methods on it?
+
+(Explain the idea, not syntax.)
+
+- A union type means a variable can hold more than one possible type.
+- TypeScript forces you to check the actual type before calling string methods because **not all methods exist on every type**.
+- By narrowing the type first, TypeScript ensures that only valid methods are called, which prevents potential runtime errors and makes the code safer and more predictable at compile time.
+
+### **Q4 (Functions & return types)**
+
+**Question:**
+
+What happens if a function is expected to return a number, but one code path returns nothing?
+
+Why is this important in real projects?
+
+- When a function is expected to return a number, TypeScript assumes that **every possible execution path** will return a number.
+- If one code path returns nothing, the function may return undefined, which breaks the return type contract.
+
+This is important in real projects because:
+
+- undefined is not a number and can cause runtime errors during calculations or comparisons.
+- Other developers rely on the function’s return type and expect it to be consistent.
+- TypeScript catches missing return paths at compile time, forcing clearer and safer logic.
+
+### **Q5 (Enums vs Union Types)**
+
+**Question:**
+
+When would you choose a **union type** instead of an **enum**?
+
+Give **one practical reason**.
+
+- I would choose a union type instead of an enum when I only need to restrict a variable to a small set of values and don’t need extra features like reverse mapping or a runtime representation. Union types are simpler, more lightweight, and work well when values are mainly used for type checking.
