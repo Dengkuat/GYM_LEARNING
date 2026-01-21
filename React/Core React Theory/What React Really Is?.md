@@ -4,7 +4,7 @@ React is a js library for building user interface, but what makes it more powerf
 
 - Think of UI user interface as a tree made of small reusable building blocks called components
 
-**Each component** 
+**Each component**  
 
 - has its own structure, styling and   behavior
 - Can re reused in multiple places
