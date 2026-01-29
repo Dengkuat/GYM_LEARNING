@@ -169,4 +169,4 @@ const [isOpen, setIsOpen] = useState(false);
 2. State changes
 3. React re-renders
 4. Condition re-evaluates
-5. UI updates
+5. UI updates 
