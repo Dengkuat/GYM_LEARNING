@@ -1,7 +1,7 @@
 1. **What is React? Is it a framework or a library.**
 - React is a JS Library for building user interface by composing reusable components and managing UI state predictably
 
-    1. **What is a single page application(SPA)? How is it different from a multiple page application(MPA)**
+    1. **What is a single page application(SPA)? How is it different from a multiple page application(MPA)** 
      Single Page Application loads a single HTML page once and updates the UI dynamically without fully page reloading
     - MPA(Each navigation is a new HTML from server, Full reloads of pages, slower with a server driven navigation)
     - SPA(Initial load once, JS handles navigation, Faster with app like experience)
