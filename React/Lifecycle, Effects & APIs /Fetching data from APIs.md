@@ -119,5 +119,5 @@ useEffect(()=>{
 	const controller = new AbortController();
 	fetch(url, {signal:controller.signal})
 	return () => controller.abort();
-}, [])
+}, []) 
 ```
