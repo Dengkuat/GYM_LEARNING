@@ -4,7 +4,7 @@
 
 →state
 
-→lifecycle behavior
+→lifecycle behavior 
 
 →context
 
