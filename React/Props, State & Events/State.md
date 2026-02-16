@@ -107,3 +107,31 @@ So react will do this when we call the setCount
 | Click + button | setCount(count + 1) | <p>Count: {count}</p> shows new value |
 | Type in input | setName(e.target.value) | Input field shows typed value |
 | Toggle modal | setOpen(true/false) | Modal appears/disappears |
+
+**Why are state update asynchronous** 
+
+1. React batches updates for performance
+
+```jsx
+const [count, setCount] = useState(0);
+function handleClick(){
+	setCount(count+1)
+	setCount(count+1)
+	setCount(count+1)
+}
+```
+
+- Here react updates state asynchronously because immediate update then it would re-render very many times in this case 3 times slowing perfomance
+- Instead react batches updates together and does only one re-render at the end of the event
+
+```jsx
+setCount(prevCount => prevCount+1)
+```
+
+- PrevCount is always the latest update incase we have multiple events at the same time, since setCount(count+1) could overcome or overwrite each other
+
+**Vitual Dom and render reconciliation**
+
+- React doesn’t immediately touch the DOM when state updates
+- It updates the vitual Dom first then in Difing it compares if there are changes, then applies them in a single render
+- Async state ensure React can optimize renders and avoid unnecessary render and work
