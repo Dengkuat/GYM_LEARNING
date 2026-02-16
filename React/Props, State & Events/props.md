@@ -1,88 +1,87 @@
-**Props (passing data correctly)**
+**Props?**
 
-**What props really are**
-
-- Props are read only data passes from parent to child
+- This are input data that are passed from the parent to children components
+- Props are read-only when inside the child component
+- How react components communicate without touching state
 
 ```jsx
-function child(props){
-	return <h1>{props.name}</h1>
+function Greeting(props){
+	return(
+		<h1>Hellp, {props.name}<h1/>
+	)
+}
+
+<Greeting name="Deng">
+<Greeting name="Kuat">
+```
+
+- So here the component can be reused in many ways with different inputs
+- Greeting can only read it and cannot modify it
+
+**Passing Props**
+
+- Props can be of primitive datatypes {string, numbers, boolean}
+- Props can be objects or arrays
+- Props can be functions for callback functions
+
+```jsx
+function Profile({name, age, onClick}){
+	return(
+		<div>
+			<p>{name} is {age} years old</p>
+			<button onClick={onClick}>Say Hi</button>
+		</div>
+	)
+}
+
+function App(){
+	const handleClick = () => alert('Hello')
+	return <profile name="Deng" age{20} onClick={handleClick}>
 }
 ```
 
-**Parent to child only one direction**
+- Here the name, age and onClick are the props they are passed from the parent component to the child component so that the children communicate to the parent
+
+**Props Destructuring**
+
+- Instead of having [props.name](http://props.name) and props.age we can destructure in this way
+
+```jsx
+function Profile({name, age}){
+	return <p>{name}, is {age} years old</p>
+}
+```
+
+- This is easier to read and debug
+
+**Default props and optional props**
+
+- We can set default props incase the child don’t include the parent prop this ensures code doesn't break
+- We can use propTypes for validation in pure js
+
+```jsx
+import PropTypes from 'prop-types';
+
+Profile.propTypes = {
+  name: PropTypes.string.isRequired,
+  age: PropTypes.number,
+  onClick: PropTypes.func
+};
+```
+
+**NOTE:**
+
+- Props are read only and cannot be modified, incase for any modification then we use states and props sticks with input,
+
+**Passing Props between components**
 
 ```jsx
 function App() {
-  return <User name="Deng" age={20} />;
+const user = { name: "Deng", age: 20 };
+return <Profile user={user} />;
 }
 
-function User(props) {
-  return (
-    <p>
-      {props.name} is {props.age} years old
-    </p>
-  );
+function Profile({ user }) {
+return <p>{[user.name](http://user.name/)} is {user.age}</p>;
 }
 ```
-
-- Data flows in one direction down way
-- The child cannot change the state of the prop
-
-Destructuring props 
-
-```jsx
-function User({ name, age }) {
-  return <p>{name} — {age}</p>;
-}
-```
-
-**Passing different types of props**
-
-```jsx
-<User
-  name="Deng"
-  age={20}
-  isStudent={true}
-  skills={["JS", "React", "TS"]}
-/>
-```
-
-```jsx
-function User({ name, skills }) {
-  return (
-    <ul>
-      {skills.map(skill => (
-        <li key={skill}>{skill}</li>
-      ))}
-    </ul>
-  );
-}
-```
-
-**KEY**
-
-- Props are read only data and we cannot mutate them
-- If data must change then the data is a state not a props
-
-Question
-
-1. **What is the difference between Props and State**
-
-Prop
-
-- Passed from parents
-- Read only, cannot be changed
-- Makes component reusable
-
-State
-
-- Owned by a component
-- Can be changed
-- Makes component more interactive
-
-We use state to change data and prop to display data
-
-1. Why do props matter(Importance) before state
-- state without props leads to isolated components
-- Props without state leads to reusable UI blocks
