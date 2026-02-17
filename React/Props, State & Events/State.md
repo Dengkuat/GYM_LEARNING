@@ -135,3 +135,81 @@ setCount(prevCount => prevCount+1)
 - React doesn’t immediately touch the DOM when state updates
 - It updates the vitual Dom first then in Difing it compares if there are changes, then applies them in a single render
 - Async state ensure React can optimize renders and avoid unnecessary render and work
+
+**State types based on datatype** 
+
+**Number State**
+
+- Used in storing numeric values
+
+```jsx
+const [count, setCount] = useState(0)
+```
+
+used for;
+
+- counters, prices, scores, calculator results
+- The type in a number comes as a string from <input> so we covert it first to numbers by setValue(Number(e.target.value))
+
+**String State**
+
+used for;
+
+- input fields, text, search queries, Names, calculator display
+
+```jsx
+const [name, setName] = useState("")
+```
+
+**Boolean State**
+
+- It can either be true or false
+
+used for;
+
+- Toggle UI, Dark mode, modal open/close, loading states
+
+```jsx
+const [isOpen, setIsOpen] = useState(false)
+```
+
+**Array State**
+
+used for;
+
+- Lists, Todo apps, cart items, messages
+
+```jsx
+const [items, setItems] = useState([])
+```
+
+NOTE; we must update the array state immutably
+
+```jsx
+setItems([...items, newItems])
+
+//not like this
+items.push(newItem)
+```
+
+**Object State**
+
+used for;
+
+- grouping related values
+
+```jsx
+const [user, setUser] = useState({
+  name: "",
+  age: 0
+})
+```
+
+When we updating it
+
+```jsx
+setUser({
+  ...user,
+  name: "Deng"
+})
+```
