@@ -139,3 +139,39 @@ export default function Navbar() {
   );
 }
 ```
+
+**Link vs <a>**
+
+**<a href=’/about’>**
+
+- Reloads entire page
+- Asks server for a new html file
+- Breaks SPA behavior
+
+**<link to=’/about’>**
+
+- prevents default browser reload
+- uses javascript
+- Updates url using history api
+- react re-renders matches components
+
+**Why SPA routing doesn’t reload**
+
+- React router uses history .pushState()
+- Changes URL without refresh
+- React checks route
+- Re-renders components
+- Dom updates via virtual Dom
+
+**So that makes the HTML file to never reload**
+
+**Why doesn’t react router reload the page**
+
+- Because it uses the browser History API to change the url without requesting a new HTML file from the server, React then renders the matches component dynamically inside the existing page
+
+**After topic questions** 
+
+1. What would happen if you removed BrowserRouter?
+2. Why is path="*" last?
+3. What makes NavLink different from Link?
+4. What actually changes when we navigate — HTML file or component?
