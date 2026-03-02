@@ -12,7 +12,7 @@ export default function Counter() {
 
       <button
         onClick={() => setCount(count - 1)}
-        className="border px-6 py-2 rounded-2xl bg-red-600 text-white "
+        className="border px-6 py-2 rounded-2xl bg-red-600 text-white "   
       >Decrement</button>
 
       <button
