@@ -31,4 +31,62 @@ So instead os asking server for a new separate page then react does this
 
 **What is client side Routing?**
 
-This is when JavaScript in the browser controls navigation, instead of the server sending a new HTML page everytime
+- This is when JavaScript in the browser controls navigation, instead of the server sending a new HTML page every time
+
+**What is BrowserRouter?**
+
+- It listens to the URL changes, uses browser history API, controls which router renders, so without routing doesn’t work
+
+**Creating pages**
+
+```jsx
+//home.jsx
+export default function Home() {
+  return <h1 className="text-3xl">Home Page</h1>;
+}
+
+//about.jsx
+export default function About() {
+  return <h1 className="text-3xl">About Page</h1>;
+}
+
+//contact.jsx
+export default function Contact() {
+  return <h1 className="text-3xl">Contact Page</h1>;
+}
+
+//notFound.jsx
+export default function NotFound() {
+  return <h1 className="text-3xl text-red-500">404 - Page Not Found</h1>;
+}
+
+//app.jsx
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import NotFound from "./pages/NotFound";
+
+export default function App() {
+  return (
+    <div>
+      <Navbar />
+
+      <div className="p-6">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </div>
+    </div>
+  );
+}
+```
+
+**How all this route matching works**
+
+- React Router compares current URL to path
+- First match wins meaning match anything that wasn’t matched above
