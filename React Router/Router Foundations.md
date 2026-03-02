@@ -90,3 +90,52 @@ export default function App() {
 
 - React Router compares current URL to path
 - First match wins meaning match anything that wasn’t matched above
+
+**Navigation bar with active styling**
+
+```jsx
+//navbar.jsx
+import { NavLink } from "react-router-dom";
+
+export default function Navbar() {
+  const linkStyle =
+    "px-4 py-2 rounded transition";
+
+  return (
+    <nav className="bg-gray-800 text-white p-4 flex gap-4">
+      <NavLink
+        to="/"
+        className={({ isActive }) =>
+          isActive
+            ? `${linkStyle} bg-blue-500`
+            : `${linkStyle} hover:bg-gray-600`
+        }
+      >
+        Home
+      </NavLink>
+
+      <NavLink
+        to="/about"
+        className={({ isActive }) =>
+          isActive
+            ? `${linkStyle} bg-blue-500`
+            : `${linkStyle} hover:bg-gray-600`
+        }
+      >
+        About
+      </NavLink>
+
+      <NavLink
+        to="/contact"
+        className={({ isActive }) =>
+          isActive
+            ? `${linkStyle} bg-blue-500`
+            : `${linkStyle} hover:bg-gray-600`
+        }
+      >
+        Contact
+      </NavLink>
+    </nav>
+  );
+}
+```
