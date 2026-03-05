@@ -29,3 +29,27 @@ Note: the dynamic segments can be used for;
 
 - code scalability, it allows handle of a large base will not having to add new lines of codes to your router
 - cleaner code, with a single component, code looks easy to debug and read instead of having very many identical ones that do almost similar things
+
+**useParams**
+
+- Now we need a way to read the id from a url
+
+```jsx
+import {useParams} from "react-router-dom"
+
+function ProducDetails(){
+	const {id} = useParams();
+	
+	return <h1>Product ID:{id}<h1>
+}
+```
+
+- So now if this url is like this Product ID: 5 then useParams will return the product
+
+**What does useParams() return?**
+
+- useParams returns an object
+
+```jsx
+{id: "8"}
+```
