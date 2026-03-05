@@ -53,3 +53,56 @@ function ProducDetails(){
 ```jsx
 {id: "8"}
 ```
+
+**useNavigate(Programming navigation)**
+
+- Some times we may not want to use Link to navigate
+
+We want the navigation to happen when something happens an action like
+
+- clicking a button
+- submitting a form
+- after login
+- after payment
+
+So for that then we can useNavigate()
+
+```jsx
+import {useNavigate} from "react-router-dom"
+function Home(){
+	const navigate = useNavigate();
+	
+	return(
+		<button onClick={() => navigate('products')}>
+			Go to Product
+		</button>
+	)
+	}
+```
+
+So now button takes us to the products
+
+**Back Button using useNavigate**
+
+- You can also go back one page using navigate
+
+```jsx
+const navigate = useNavigate();
+<button onClick={()=>navigate(-1)}>
+	Go back
+<button>
+```
+
+**Use cases of useNavigate**
+
+- **redirecting after an action,** sending a user to a “success page” after they have submitted a form to finished checkout
+- Go back or go forward, we can pass a number to move through the browser history
+
+navigate(-) → takes us back one page
+
+navigate(1) → goes forward one page
+
+**Differences between useNavigate and <Link>?**
+
+- use<Link> form standard navigation where the user decides to click a button or menu item
+- useNavigate when you code can decide its time to change the page such as when an action happen, clicking a button, submitting a form
