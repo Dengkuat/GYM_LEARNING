@@ -20,6 +20,12 @@ export default function RandomNumberGenerator(){
       >
         stop Random Generation
       </button>
+
+      <button className="border py-2 px-4 rounded-2xl"
+      onClick={() => setIsRunning(true)}
+      >
+        Continue Random Generation
+      </button>
     </div>
   )
 }
