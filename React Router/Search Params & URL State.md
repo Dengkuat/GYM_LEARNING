@@ -83,3 +83,41 @@ Shoes
 | Lost on refresh | Survives refresh |
 | Not shareable | Shareable |
 | Local to component | Global in browser |
+
+**Why URL state is powerfull**
+
+Because we can;
+
+- share filters
+
+```jsx
+/products?category=shoes
+```
+
+Send links to people
+
+- Save state after refresh
+
+filter stays active
+
+- browser history works
+
+back button works correctly
+
+```jsx
+?category=shoes
+?category=phones
+```
+
+we can press back to go back to shoes
+
+**When should state be in URL**
+
+store url when 
+
+| **Good for URL** | **Bad for URL** |
+| --- | --- |
+| Filters | Form inputs |
+| Sorting | Temporary UI state |
+| Pagination | Animation states |
+| Search queries | Modal open/close |
