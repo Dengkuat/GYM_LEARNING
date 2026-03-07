@@ -9,11 +9,12 @@ import CountDownTimer from "./components/countDownTimer";
 import RandomNumberGenerator from "./components/Random Number Generator";
 import APIRolling from "./components/API Polling";
 import LoginForm from "./components/LoginForm";
+import SmartAutoCounter from "./components/Smart Auto Counter";
 
 export default function App(){
   return(
     <div>
-      <LoginForm/>
+      <SmartAutoCounter/>
     </div>
   )
 }
