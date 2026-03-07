@@ -8,11 +8,12 @@ import AutoToggle from "./components/Auto Toggle";
 import CountDownTimer from "./components/countDownTimer";
 import RandomNumberGenerator from "./components/Random Number Generator";
 import APIRolling from "./components/API Polling";
+import LoginForm from "./components/LoginForm";
 
 export default function App(){
   return(
     <div>
-      <APIRolling/>
+      <LoginForm/>
     </div>
   )
 }
