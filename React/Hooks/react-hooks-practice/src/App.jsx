@@ -10,18 +10,15 @@ import RandomNumberGenerator from "./components/Random Number Generator";
 import APIRolling from "./components/API Polling";
 import LoginForm from "./components/LoginForm";
 import SmartAutoCounter from "./components/Smart Auto Counter";
+import CounterRerender from "./components/clickCounterRender";
 import { useRef } from "react";
 
+
 export default function App(){
-  const inputRef = useRef(null)
-  const focusInput = () => {
-    inputRef.current.focus
-  }
+  
   return(
     <>
-      <input
-        
-      />
+    <CounterRerender/>
     </>
   )
 }
