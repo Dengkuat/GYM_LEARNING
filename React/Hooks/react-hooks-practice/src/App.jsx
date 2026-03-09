@@ -12,13 +12,14 @@ import LoginForm from "./components/LoginForm";
 import SmartAutoCounter from "./components/Smart Auto Counter";
 import CounterRerender from "./components/clickCounterRender";
 import { useRef } from "react";
+import FetchDisplayPosts from "./components/fetchAndDisplayPosts";
 
 
 export default function App(){
   
   return(
     <>
-    <CounterRerender/>
+    <FetchDisplayPosts/>
     </>
   )
 }
