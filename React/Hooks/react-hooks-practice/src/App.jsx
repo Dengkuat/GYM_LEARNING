@@ -13,13 +13,41 @@ import SmartAutoCounter from "./components/Smart Auto Counter";
 import CounterRerender from "./components/clickCounterRender";
 import { useRef } from "react";
 import FetchDisplayPosts from "./components/fetchAndDisplayPosts";
+import CounterApp from "./components/counterApp";
+import TaskManager from "./components/TaskManager";
+import NumberSum from "./components/numberCalculateSum";
+import Posts from "./components/DisplayPosts";
+import useUsers from "./components/customHook useUser";
+import useDarkMode from "./components/useDarkMode";
 
 
-export default function App(){
-  
-  return(
-    <>
-    <FetchDisplayPosts/>
-    </>
-  )
+
+export default function App() {
+  const { user, loading, error } = useUsers(`https://jsonplaceholder.typicode.com/users`);
+
+  const { darkMode, toggleTheme } = useDarkMode();
+
+  if (loading) return <div>Loading....</div>
+  if (error) return <div>Error{error}</div>
+
+  return (
+    <div
+      className={`min-h-screen p-5 duration-500 ${darkMode ? "bg-black text-white" : "bg-white text-black"
+        }`}
+    >
+
+
+
+      <button onClick={toggleTheme}>
+        Toggle Theme
+      </button>
+
+      <ul>
+        {user.map(u => (
+          <li key={u.id}>{u.name}</li>
+        ))}
+      </ul>
+
+    </div>
+  );
 }
