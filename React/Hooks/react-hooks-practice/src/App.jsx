@@ -20,23 +20,15 @@ import Posts from "./components/DisplayPosts";
 import useUsers from "./components/customHook useUser";
 import useDarkMode from "./components/useDarkMode";
 import useGettingNames from "./components/GetingNames";
+import useInput from "./components/formInput Custom Hook";
+import ToggleButton from "./components/buttonToggle";
 
 
 
 export default function App() {
-
-  const {data, error, loading} = useGettingNames(`https://jsonplaceholder.typicode.com/users`)
-
-  if(loading) return <p>Loading...</p>
-  if(error) return <p>Error</p>
-  
-  return (
-    <>
+ return(
     <div>
-      {data.map(user => (
-        <pre key={user.id}>{JSON.stringify(user, null, 3)}</pre>
-      ))}
+      <ToggleButton/>
     </div>
-    </>
   )
 }
