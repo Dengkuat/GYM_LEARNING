@@ -24,13 +24,15 @@ import useInput from "./components/formInput Custom Hook";
 import ToggleButton from "./components/buttonToggle";
 import InputField from "./components/inputFieldButton";
 import StopWatch from "./components/StopWatch useRef";
+import NameEmail from "./components/DisplayName&EmailFetch";
+import TypeAccuracyChecker from "./components/TypeAccuracyChecker";
 
 
 
 export default function App() {
  return(
     <div>
-      <StopWatch/>
+      <TypeAccuracyChecker/>
     </div>
   )
 }
