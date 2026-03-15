@@ -26,13 +26,18 @@ import InputField from "./components/inputFieldButton";
 import StopWatch from "./components/StopWatch useRef";
 import NameEmail from "./components/DisplayName&EmailFetch";
 import TypeAccuracyChecker from "./components/TypeAccuracyChecker";
-
-
+import LiveCounterCharacter from "./components/liveCharacterCounter";
+import PasswordChecker from "./components/PasswordChecker";
+import SearchFilter from "./components/searchFilter";
+import TypeNumber from "./components/userLogic";
+import LoadFetch from "./components/loadingFetch";
+import Todos from "./components/todo task/new add todo";
+import FormValidator from "./components/log/FormValidator";
 
 export default function App() {
- return(
+  return (
     <div>
-      <TypeAccuracyChecker/>
+      <FormValidator/>
     </div>
   )
 }
