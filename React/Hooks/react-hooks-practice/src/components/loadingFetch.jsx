@@ -1,10 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function LoadFetch() {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [search, setSearch] = useState('');
+  const inputRef = useRef(null)
 
   async function fetchUser() {
     try {
@@ -27,6 +28,7 @@ export default function LoadFetch() {
 
   useEffect(() => {
     fetchUser()
+    inputRef.current?.focus()
   }, [])
 
   if (loading) {
@@ -42,7 +44,7 @@ export default function LoadFetch() {
   }
 
   const filteredUsers = users.filter((user) => {
-    return user.name.toLowerCase().includes(search);
+    return user.name.toLowerCase().includes(search.toLowerCase());
   })
 
   return (
@@ -52,6 +54,7 @@ export default function LoadFetch() {
 
       <input
         type="text"
+        ref={inputRef}
         placeholder="Enter available user name"
         className="border rounded-2xl text-center py-1 px-4 my-4"
         value={search}
